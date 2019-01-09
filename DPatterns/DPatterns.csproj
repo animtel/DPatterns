@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Patterns\BehavioralPatterns\" />
+    <Folder Include="Patterns\MVCPatterns\" />
+    <Folder Include="Patterns\StructuralPatterns\" />
+  </ItemGroup>
+
 </Project>

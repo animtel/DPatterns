@@ -1,0 +1,5 @@
+﻿Provides an abstract class
+	Generalized interface
+	Hides details from rest of application
+	Factory class creates and instance of a class that inherits or implements the abstract class
+
