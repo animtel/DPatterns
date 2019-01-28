@@ -1,4 +1,6 @@
-﻿using DPatterns.Patterns.CreationalPatterns.AbstractFactory;
+﻿using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
+using DPatterns.Patterns.BehavioralPatterns.State.Models;
+using DPatterns.Patterns.CreationalPatterns.AbstractFactory;
 using DPatterns.Patterns.CreationalPatterns.FactoryMethod.Models;
 using System;
 
@@ -10,8 +12,14 @@ namespace DPatterns
         {
             #region CreationalPatternsExample
             //FactoryMethodExample();
-            AbstractFactoryExample();
+            //AbstractFactoryExample();
             #endregion
+
+            #region BehavioralPatternsExample
+            StateExample();
+            #endregion
+
+            Console.ReadKey();
         }
 
 
@@ -36,6 +44,15 @@ namespace DPatterns
             customer.GetNamesOfProducts();
 
             Console.ReadKey();
+        }
+        #endregion
+
+        #region BehavioralPatternsExampleMethods
+        static void StateExample()
+        {
+            Context context = new Context(new StateA());
+            context.ChangeState();
+            context.ChangeState();
         }
         #endregion
     }
