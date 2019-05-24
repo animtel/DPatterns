@@ -3,6 +3,7 @@ using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
 using DPatterns.Patterns.BehavioralPatterns.State.Models;
 using DPatterns.Patterns.CreationalPatterns.AbstractFactory;
 using DPatterns.Patterns.CreationalPatterns.FactoryMethod.Models;
+using DPatterns.Patterns.CreationalPatterns.Singleton;
 using System;
 
 namespace DPatterns
@@ -19,6 +20,7 @@ namespace DPatterns
             #region CreationalPatternsExample
             //FactoryMethodExample();
             //AbstractFactoryExample();
+            //SingletonExample();
             #endregion
 
             #region BehavioralPatternsExample
@@ -50,6 +52,17 @@ namespace DPatterns
             customer.GetNamesOfProducts();
 
             Console.ReadKey();
+        }
+
+        static void SingletonExample()
+        {
+            Singleton obj1 = Singleton.GetInstance();
+            Singleton obj2 = Singleton.GetInstance();
+            Singleton obj3 = Singleton.GetInstance();
+
+            Console.WriteLine(obj1.Name);
+            Console.WriteLine(obj2.Name);
+            Console.WriteLine(obj3.Name);
         }
         #endregion
 
