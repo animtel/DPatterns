@@ -1,4 +1,5 @@
-﻿using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
+﻿using DPatterns.DI;
+using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
 using DPatterns.Patterns.BehavioralPatterns.State.Models;
 using DPatterns.Patterns.CreationalPatterns.AbstractFactory;
 using DPatterns.Patterns.CreationalPatterns.FactoryMethod.Models;
@@ -10,13 +11,18 @@ namespace DPatterns
     {
         static void Main(string[] args)
         {
+            #region DI
+            var di = new DIClient();
+            #endregion
+
+
             #region CreationalPatternsExample
             //FactoryMethodExample();
             //AbstractFactoryExample();
             #endregion
 
             #region BehavioralPatternsExample
-            StateExample();
+            //StateExample();
             #endregion
 
             Console.ReadKey();
