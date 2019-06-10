@@ -4,6 +4,8 @@ using DPatterns.Patterns.BehavioralPatterns.State.Models;
 using DPatterns.Patterns.CreationalPatterns.AbstractFactory;
 using DPatterns.Patterns.CreationalPatterns.FactoryMethod.Models;
 using DPatterns.Patterns.CreationalPatterns.Singleton;
+using DPatterns.Patterns.StructuralPatterns.Composite;
+using DPatterns.Patterns.StructuralPatterns.Decorator;
 using System;
 
 namespace DPatterns
@@ -13,9 +15,8 @@ namespace DPatterns
         static void Main(string[] args)
         {
             #region DI
-            var di = new DIClient();
+            //var di = new DIClient();
             #endregion
-
 
             #region CreationalPatternsExample
             //FactoryMethodExample();
@@ -25,6 +26,11 @@ namespace DPatterns
 
             #region BehavioralPatternsExample
             //StateExample();
+            #endregion
+
+            #region StructuralPatterns
+            //var compositeClient = new CompositeClient();
+            var decoratorClient = new DecoratorClient();
             #endregion
 
             Console.ReadKey();
