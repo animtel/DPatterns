@@ -1,6 +1,6 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DPatterns.Patterns.StructuralPatterns.Decorator
 {
@@ -15,9 +15,9 @@ namespace DPatterns.Patterns.StructuralPatterns.Decorator
         {
             var loggers = new List<ITLogger>
             {
-                new Logger(),
-                new TelegramDecorator(new Logger()),
-                new ViberDecorator(new TelegramDecorator(new Logger()))
+                new TLogger(),
+                new TelegramDecorator(new TLogger()),
+                new ViberDecorator(new TelegramDecorator(new TLogger()))
             };
 
             foreach (var logger in loggers)
@@ -38,7 +38,7 @@ namespace DPatterns.Patterns.StructuralPatterns.Decorator
         string Log();
     }
 
-    public class Logger : ITLogger
+    public class TLogger : ITLogger
     {
         public string GetDescription()
         {

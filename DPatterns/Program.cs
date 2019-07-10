@@ -1,6 +1,7 @@
 ﻿using DPatterns.DI;
 using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
 using DPatterns.Patterns.BehavioralPatterns.State.Models;
+using DPatterns.Patterns.BehavioralPatterns.Strategy;
 using DPatterns.Patterns.CreationalPatterns.AbstractFactory;
 using DPatterns.Patterns.CreationalPatterns.FactoryMethod.Models;
 using DPatterns.Patterns.CreationalPatterns.Singleton;
@@ -26,11 +27,12 @@ namespace DPatterns
 
             #region BehavioralPatternsExample
             //StateExample();
+            var strategy = new StrategyClient();
             #endregion
 
             #region StructuralPatterns
             //var compositeClient = new CompositeClient();
-            var decoratorClient = new DecoratorClient();
+            //var decoratorClient = new DecoratorClient();
             #endregion
 
             Console.ReadKey();
