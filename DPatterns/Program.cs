@@ -1,4 +1,5 @@
 ﻿using DPatterns.DI;
+using DPatterns.Patterns.BehavioralPatterns.Command;
 using DPatterns.Patterns.BehavioralPatterns.Observer;
 using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
 using DPatterns.Patterns.BehavioralPatterns.State.Models;
@@ -29,7 +30,8 @@ namespace DPatterns
             #region BehavioralPatternsExample
             //StateExample();
             //var strategy = new StrategyClient();
-            var observer = new ObserverClient();
+            //var observer = new ObserverClient();
+            //var command = new CommandClient();
             #endregion
 
             #region StructuralPatterns
