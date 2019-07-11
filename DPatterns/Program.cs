@@ -32,6 +32,7 @@ namespace DPatterns
             //var strategy = new StrategyClient();
             //var observer = new ObserverClient();
             //var command = new CommandClient();
+            var commandv2 = new CommandClientV2();
             #endregion
 
             #region StructuralPatterns
