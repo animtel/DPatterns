@@ -4,6 +4,7 @@ using DPatterns.Patterns.BehavioralPatterns.Observer;
 using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
 using DPatterns.Patterns.BehavioralPatterns.State.Models;
 using DPatterns.Patterns.BehavioralPatterns.Strategy;
+using DPatterns.Patterns.BehavioralPatterns.TemplateMethod;
 using DPatterns.Patterns.CreationalPatterns.AbstractFactory;
 using DPatterns.Patterns.CreationalPatterns.FactoryMethod.Models;
 using DPatterns.Patterns.CreationalPatterns.Singleton;
@@ -34,6 +35,7 @@ namespace DPatterns
             //var observer = new ObserverClient();
             //var command = new CommandClient();
             //var commandv2 = new CommandClientV2();
+            var templateMethod = new TemplateMethodClient();
             #endregion
 
             #region StructuralPatterns
