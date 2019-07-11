@@ -30,9 +30,10 @@ namespace DPatterns
             #region BehavioralPatternsExample
             //StateExample();
             //var strategy = new StrategyClient();
+            //var strategyv2 = new StrategyClientV2();
             //var observer = new ObserverClient();
             //var command = new CommandClient();
-            var commandv2 = new CommandClientV2();
+            //var commandv2 = new CommandClientV2();
             #endregion
 
             #region StructuralPatterns
