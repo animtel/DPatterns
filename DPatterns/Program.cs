@@ -1,4 +1,5 @@
 ﻿using DPatterns.DI;
+using DPatterns.Patterns.BehavioralPatterns.ChainOfResponsibility;
 using DPatterns.Patterns.BehavioralPatterns.Command;
 using DPatterns.Patterns.BehavioralPatterns.Observer;
 using DPatterns.Patterns.BehavioralPatterns.State.Contracts;
@@ -35,7 +36,8 @@ namespace DPatterns
             //var observer = new ObserverClient();
             //var command = new CommandClient();
             //var commandv2 = new CommandClientV2();
-            var templateMethod = new TemplateMethodClient();
+            //var templateMethod = new TemplateMethodClient();
+            var chainOfResponsibilityClient = new ChainOfResponsibilityClient();
             #endregion
 
             #region StructuralPatterns
