@@ -18,7 +18,7 @@ namespace DPatterns.Patterns.BehavioralPatterns.ChainOfResponsibility
             using (new DoubleAttackModifierV2(game, goblin))
             {
                 Console.WriteLine(goblin);
-                using (new IncreaseDobleModifierV2(game, goblin))
+                using (new IncreaseDoubleModifierV2(game, goblin))
                 {
                     Console.WriteLine(goblin);
                 }
@@ -134,9 +134,9 @@ namespace DPatterns.Patterns.BehavioralPatterns.ChainOfResponsibility
         }
     }
 
-    public class IncreaseDobleModifierV2 : CreatureModifierV2
+    public class IncreaseDoubleModifierV2 : CreatureModifierV2
     {
-        public IncreaseDobleModifierV2(GameV2 game, CreatureV2 creature) : base(game, creature)
+        public IncreaseDoubleModifierV2(GameV2 game, CreatureV2 creature) : base(game, creature)
         {
         }
 
