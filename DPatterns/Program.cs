@@ -37,7 +37,8 @@ namespace DPatterns
             //var command = new CommandClient();
             //var commandv2 = new CommandClientV2();
             //var templateMethod = new TemplateMethodClient();
-            var chainOfResponsibilityClient = new ChainOfResponsibilityClient();
+            //var chainOfResponsibilityClient = new ChainOfResponsibilityClient();
+            var chainOfResponsibilityClientV2 = new ChainOfResponsibilityClientV2();
             #endregion
 
             #region StructuralPatterns
