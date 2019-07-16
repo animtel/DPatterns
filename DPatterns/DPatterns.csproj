@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Patterns\MVCPatterns\" />
-    <Folder Include="Patterns\SOLID\2.OCP\" />
     <Folder Include="Patterns\SOLID\3.LSP\" />
     <Folder Include="Patterns\SOLID\4.ISP\" />
     <Folder Include="Patterns\SOLID\5.DIP\" />
