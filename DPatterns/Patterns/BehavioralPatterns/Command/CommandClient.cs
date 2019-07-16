@@ -22,21 +22,21 @@ namespace DPatterns.Patterns.BehavioralPatterns.Command
         void Execute();
         void Undo();
     }
-    
+
     // Receiver
     class TV
-    { 
+    {
         public void On()
         {
             Console.WriteLine("TV on.");
         }
-    
+
         public void Off()
         {
             Console.WriteLine("TV off...");
         }
     }
-    
+
     class TVOnCommand : ICommand
     {
         TV tv;
@@ -53,19 +53,19 @@ namespace DPatterns.Patterns.BehavioralPatterns.Command
             tv.Off();
         }
     }
-    
+
     // Invoker
     class Pult
     {
         ICommand command;
-    
+
         public Pult() { }
-    
+
         public void SetCommand(ICommand com)
         {
             command = com;
         }
-    
+
         public void PressButton()
         {
             command.Execute();

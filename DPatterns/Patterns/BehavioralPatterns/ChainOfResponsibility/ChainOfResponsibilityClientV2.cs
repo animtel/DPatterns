@@ -12,7 +12,7 @@ namespace DPatterns.Patterns.BehavioralPatterns.ChainOfResponsibility
         public void Execute()
         {
             var game = new GameV2();
-            var goblin = new CreatureV2(game, "Strong Goblin", 3,3);
+            var goblin = new CreatureV2(game, "Strong Goblin", 3, 3);
             Console.WriteLine(goblin);
 
             using (new DoubleAttackModifierV2(game, goblin))
@@ -98,7 +98,7 @@ namespace DPatterns.Patterns.BehavioralPatterns.ChainOfResponsibility
         }
     }
 
-    public abstract class CreatureModifierV2:IDisposable
+    public abstract class CreatureModifierV2 : IDisposable
     {
         protected GameV2 game;
         protected CreatureV2 creature;
