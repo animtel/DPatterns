@@ -46,7 +46,7 @@ namespace DPatterns.Patterns.BehavioralPatterns.Interpreter
             var result = new List<Token>();
             for (int i = 0; i < input.Length; i++)
             {
-                switch (input[i])
+                switch (input[i]) // yep, this code seems not clearly, you should understand, that here nice place for chain of responsibility, but for easy understanding i dont realize it here.
                 {
                     case '+':
                         result.Add(new Token(Token.Type.Plus, "+"));
