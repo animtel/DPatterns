@@ -22,6 +22,8 @@ namespace DPatterns.Patterns.BehavioralPatterns.Interpreter
     //For example we have expression: "(13+4)-(12+1)" and after lexer it should see smth like this: `(`     `13`    `+`     `4`     `)`     `-`     `(`     `12`    `+`     `1`     `)`
 
     //Part 2:
+    //On to the parsing process. All we need to do is turn a sequence of
+    //Tokens into a binary tree of IExpressions.
     class InterpreterClient : IClient
     {
         public InterpreterClient()
@@ -60,7 +62,7 @@ namespace DPatterns.Patterns.BehavioralPatterns.Interpreter
                         break;
                     default:
                         var sb = new StringBuilder(input[i].ToString());
-                        for (int j = i + 1; j < input.Length; ++j)
+                        for (int j = i + 1; j < input.Length; ++j) //retrieving full number; FYI if we have number 145, we need to write to the token 145, not 1, for that i'm using loop
                         {
                             if (char.IsDigit(input[j]))
                             {
@@ -133,17 +135,17 @@ namespace DPatterns.Patterns.BehavioralPatterns.Interpreter
                         }
                         break;
                     case Token.Type.Plus:
-                        result.MyType = BinaryOperation.Type.Addition;
+                        result.MyOperationType = BinaryOperation.OperationType.Addition;
                         break;
                     case Token.Type.Minus:
-                        result.MyType = BinaryOperation.Type.Substraction;
+                        result.MyOperationType = BinaryOperation.OperationType.Substraction;
                         break;
                     case Token.Type.Lparen:
                         int j = i;
                         for (; j < tokens.Count; ++j)
                             if (tokens[j].MyType == Token.Type.Rparen)
-                                break;
-
+                                break; // found it!
+                        // process subexpression w/o opening
                         var subExpression = tokens.Skip(i + 1).Take(j - i - 1).ToList();
                         var element = Parse(subExpression);
                         if (!haveLHS)
@@ -156,7 +158,7 @@ namespace DPatterns.Patterns.BehavioralPatterns.Interpreter
                             result.Right = element;
                         }
 
-                        i = j;
+                        i = j; // advance
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -167,7 +169,7 @@ namespace DPatterns.Patterns.BehavioralPatterns.Interpreter
         }
 
 
-        interface IElement
+        interface IElement // At the top, it is often useful to have an abstract class or interface that all elements of the tree implement
         {
             int Value { get; }
         }
@@ -182,25 +184,25 @@ namespace DPatterns.Patterns.BehavioralPatterns.Interpreter
             }
         }
 
-        class BinaryOperation : IElement
+        class BinaryOperation : IElement // In pseudo-code, for "2 + 3" expression, binary operation seems like this: BinaryOperation{Literal{2}, Literal{3}, addition}
         {
-            public enum Type
+            public enum OperationType
             {
                 Addition, Substraction
             }
 
-            public Type MyType;
+            public OperationType MyOperationType;
             public IElement Left, Right;
 
             public int Value
             {
                 get
                 {
-                    switch (MyType)
+                    switch (MyOperationType)
                     {
-                        case Type.Addition:
+                        case OperationType.Addition:
                             return Left.Value + Right.Value;
-                        case Type.Substraction:
+                        case OperationType.Substraction:
                             return Left.Value - Right.Value;
                         default:
                             throw new ArgumentNullException();
