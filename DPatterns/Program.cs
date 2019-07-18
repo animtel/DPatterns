@@ -12,6 +12,7 @@ using DPatterns.Patterns.CreationalPatterns.Singleton;
 using DPatterns.Patterns.StructuralPatterns.Composite;
 using DPatterns.Patterns.StructuralPatterns.Decorator;
 using System;
+using DPatterns.Patterns.BehavioralPatterns.Interpreter;
 
 namespace DPatterns
 {
@@ -38,7 +39,8 @@ namespace DPatterns
             //var commandv2 = new CommandClientV2();
             //var templateMethod = new TemplateMethodClient();
             //var chainOfResponsibilityClient = new ChainOfResponsibilityClient();
-            var chainOfResponsibilityClientV2 = new ChainOfResponsibilityClientV2();
+            //var chainOfResponsibilityClientV2 = new ChainOfResponsibilityClientV2();
+            var interpreterClient = new InterpreterClient();
             #endregion
 
             #region StructuralPatterns
