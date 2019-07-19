@@ -8,6 +8,14 @@ using System.Xml.Serialization;
 
 namespace DPatterns.Patterns.CreationalPatterns.Prototype
 {
+
+    //To implement a prototype< partially construct an object and store it somewhere
+    //For make a clone, you can use:
+    // - Implement your own deep copy functionality
+    // - Implement ICloneable
+    // - Serialize and deserialize
+    // - Create an abstraction like IPrototype<T> with method DeepCopy
+    // and more different approaches, but idea still one;
     public class PrototypeClient : IClient
     {
         public PrototypeClient()
