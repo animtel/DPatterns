@@ -22,16 +22,21 @@ namespace DPatterns
         static void Main(string[] args)
         {
             #region DI
+
             //var di = new DIClient();
+
             #endregion
 
             #region CreationalPatternsExample
+
             //FactoryMethodExample();
             //AbstractFactoryExample();
             //SingletonExample();
+
             #endregion
 
             #region BehavioralPatternsExample
+
             //StateExample();
             //var strategy = new StrategyClient();
             //var strategyv2 = new StrategyClientV2();
@@ -43,11 +48,14 @@ namespace DPatterns
             //var chainOfResponsibilityClientV2 = new ChainOfResponsibilityClientV2();
             //var interpreterClient = new InterpreterClient();
             var prototypeClient = new PrototypeClient();
+
             #endregion
 
             #region StructuralPatterns
+
             //var compositeClient = new CompositeClient();
             //var decoratorClient = new DecoratorClient();
+
             #endregion
 
             Console.ReadKey();
@@ -55,6 +63,7 @@ namespace DPatterns
 
 
         #region CreationalPatternsExampleMethods
+
         static void FactoryMethodExample()
         {
             Developer dev = new PanelDeveloper("PanelDeveloper Nick");
@@ -77,27 +86,19 @@ namespace DPatterns
             Console.ReadKey();
         }
 
-        static void SingletonExample()
-        {
-            Singleton obj1 = Singleton.GetInstance();
-            Singleton obj2 = Singleton.GetInstance();
-            Singleton obj3 = Singleton.GetInstance();
-
-            Console.WriteLine(obj1.Name);
-            Console.WriteLine(obj2.Name);
-            Console.WriteLine(obj3.Name);
-        }
         #endregion
 
         #region BehavioralPatternsExampleMethods
+
         static void StateExample()
         {
             Context context = new Context(new StateA());
             context.ChangeState();
             context.ChangeState();
         }
+
         #endregion
-    }
+}
 
     
 }
