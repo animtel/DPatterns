@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace DPatterns.Patterns.CreationalPatterns.Prototype
 {
@@ -22,8 +25,36 @@ namespace DPatterns.Patterns.CreationalPatterns.Prototype
             Console.WriteLine(jane);
         }
 
-        class Person //: ICloneable Yep, you can to implement Clone method for each Class for this class, but it isn't convenient =(
-            // I just want to show u how u can use copy constructor and factory, for convenient api of creation deep copy of objects
+        public static class ExtensionMethods
+        {
+            //Also for cloning of objects, you can use smth like this methods
+            public static T DeepCopy<T>(T self)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    var formatter = new BinaryFormatter();
+                    formatter.Serialize(ms, self);
+                    ms.Position = 0;
+
+                    return (T)formatter.Deserialize(ms); //For using it, please, be ensure that your's classes are [Serializable]
+                }
+            }
+
+            public static T DeepCopyXml<T>(T self)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    var s = new XmlSerializer(typeof(T));
+                    s.Serialize(ms, self);
+                    ms.Position = 0;
+                    return (T)s.Deserialize(ms);
+                }
+            }
+        }
+
+        //[Serializable]
+        class Person //: ICloneable Yep, you can to implement Clone method for each Class for this class, but it isn't convenient, because then you will have object, not yours type and some else misunderstood api =(
+                     // I just want to show u how u can use copy constructor, for convenient api of creation deep copy of objects
         {
             public string[] Names;
             public Address Address;
@@ -34,10 +65,15 @@ namespace DPatterns.Patterns.CreationalPatterns.Prototype
                 Address = address;
             }
 
-            public Person(Person otherPerson)
+            public Person(Person otherPerson) //Copy constructor
             {
                 Names = otherPerson.Names;
                 Address = new Address(otherPerson.Address);
+            }
+
+            public Person()
+            {
+                
             }
 
             public override string ToString()
@@ -62,6 +98,11 @@ namespace DPatterns.Patterns.CreationalPatterns.Prototype
             {
                 StreetName = otherAddress.StreetName;
                 HouseNumber = otherAddress.HouseNumber;
+            }
+
+            public Address()
+            {
+                
             }
 
             public override string ToString()
