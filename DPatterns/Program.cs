@@ -13,6 +13,7 @@ using DPatterns.Patterns.StructuralPatterns.Composite;
 using DPatterns.Patterns.StructuralPatterns.Decorator;
 using System;
 using DPatterns.Patterns.BehavioralPatterns.Interpreter;
+using DPatterns.Patterns.CreationalPatterns.Builder;
 using DPatterns.Patterns.CreationalPatterns.Prototype;
 
 namespace DPatterns
@@ -32,6 +33,7 @@ namespace DPatterns
             //FactoryMethodExample();
             //AbstractFactoryExample();
             //SingletonExample();
+            var builderClient = new BuilderClient();
 
             #endregion
 
@@ -47,7 +49,7 @@ namespace DPatterns
             //var chainOfResponsibilityClient = new ChainOfResponsibilityClient();
             //var chainOfResponsibilityClientV2 = new ChainOfResponsibilityClientV2();
             //var interpreterClient = new InterpreterClient();
-            var prototypeClient = new PrototypeClient();
+            //var prototypeClient = new PrototypeClient();
 
             #endregion
 
